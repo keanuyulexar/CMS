@@ -1,0 +1,457 @@
+/* Responsive Design */
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 14rem;
+    }
+    
+    .main-content {
+        margin-left: 14rem;
+    }
+    
+    .search-input {
+        width: 20rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: -16rem;
+        transition: left 0.3s ease-in-out;
+        z-index: 20;
+    }
+    
+    .sidebar.mobile-open {
+        left: 0;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .header {
+        padding: 1rem;
+    }
+    
+    .header-left {
+        flex: 1;
+    }
+    
+    .search-container {
+        flex: 1;
+    }
+    
+    .search-input {
+        width: 100%;
+    }
+    
+    .header-right {
+        gap: 0.5rem;
+    }
+    
+    .user-details {
+        display: none;
+    }
+    
+    .content-area {
+        padding: 1rem;
+    }
+    
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .filters-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-filter {
+        min-width: auto;
+    }
+    
+    .filter-group {
+        justify-content: space-between;
+    }
+    
+    .filter-group select {
+        flex: 1;
+        margin-left: 0.5rem;
+    }
+    
+    .table-container {
+        font-size: 0.875rem;
+    }
+    
+    .content-table th,
+    .content-table td,
+    .users-table th,
+    .users-table td {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .content-table th:nth-child(n+4),
+    .content-table td:nth-child(n+4) {
+        display: none;
+    }
+    
+    .users-table th:nth-child(n+4),
+    .users-table td:nth-child(n+4) {
+        display: none;
+    }
+    
+    .modal-content {
+        margin: 1rem;
+        max-height: calc(100vh - 2rem);
+    }
+    
+    .form-layout {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .form-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+    
+    .form-actions button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .login-card {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .logo-container {
+        width: 3rem;
+        height: 3rem;
+    }
+    
+    .logo-container i {
+        font-size: 1.5rem;
+    }
+    
+    .login-header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .content-area {
+        padding: 0.75rem;
+    }
+    
+    .stat-card {
+        padding: 1rem;
+    }
+    
+    .stat-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .stat-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.25rem;
+    }
+    
+    .card-header,
+    .card-content {
+        padding: 1rem;
+    }
+    
+    .modal-content {
+        margin: 0.5rem;
+        max-height: calc(100vh - 1rem);
+    }
+    
+    .content-form {
+        padding: 1rem;
+    }
+    
+    .sidebar-section {
+        padding: 0.75rem;
+    }
+    
+    .settings-section .section-content {
+        padding: 1rem;
+    }
+    
+    .login-card {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .demo-credentials {
+        font-size: 0.75rem;
+    }
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #374151;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s;
+}
+
+.mobile-menu-toggle:hover {
+    background-color: #f3f4f6;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+/* Mobile Overlay */
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 15;
+}
+
+.mobile-overlay.active {
+    display: block;
+}
+
+/* Responsive Tables */
+@media (max-width: 768px) {
+    .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .table-responsive table {
+        min-width: 600px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .sidebar,
+    .header,
+    .mobile-menu-toggle,
+    .mobile-overlay,
+    .modal,
+    .primary-btn,
+    .secondary-btn,
+    .action-btn {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .content-area {
+        padding: 0;
+    }
+    
+    .card,
+    .stat-card,
+    .dashboard-card {
+        box-shadow: none;
+        border: 1px solid #e5e7eb;
+    }
+    
+    body {
+        background: white;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .nav-link.active {
+        background-color: #000;
+        color: #fff;
+    }
+    
+    .primary-btn {
+        background-color: #000;
+        border: 2px solid #000;
+    }
+    
+    .primary-btn:hover {
+        background-color: #333;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: #000;
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .sidebar {
+        transition: none;
+    }
+    
+    .hover-lift:hover {
+        transform: none;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #1f2937;
+        --bg-secondary: #111827;
+        --text-primary: #f9fafb;
+        --text-secondary: #d1d5db;
+        --border-color: #374151;
+    }
+    
+    body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+    }
+    
+    .sidebar,
+    .header,
+    .card,
+    .stat-card,
+    .dashboard-card,
+    .modal-content {
+        background-color: var(--bg-secondary);
+        border-color: var(--border-color);
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        background-color: var(--bg-primary);
+        border-color: var(--border-color);
+        color: var(--text-primary);
+    }
+    
+    .nav-link {
+        color: var(--text-secondary);
+    }
+    
+    .nav-link:hover {
+        background-color: var(--bg-primary);
+    }
+    
+    .nav-link.active {
+        background-color: #1e40af;
+        color: #dbeafe;
+    }
+}
+
+/* Landscape Orientation on Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .content-area {
+        padding: 0.5rem;
+    }
+    
+    .modal-content {
+        max-height: calc(100vh - 1rem);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1440px) {
+    .sidebar {
+        width: 18rem;
+    }
+    
+    .main-content {
+        margin-left: 18rem;
+    }
+    
+    .search-input {
+        width: 28rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .content-area {
+        padding: 2rem;
+    }
+}
+
+/* Ultra-wide Screens */
+@media (min-width: 1920px) {
+    .content-area {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    
+    .modal-content {
+        max-width: 1200px;
+    }
+}
